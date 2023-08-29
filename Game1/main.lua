@@ -19,7 +19,7 @@ function love.load()
 
     -- Player Variables 
     player = {}
-    player.collider = world:newBSGRectangleCollider(400, 250, 50, 100, 10)
+    player.collider = world:newBSGRectangleCollider(400, 200, 50, 100, 10)
     player.collider:setFixedRotation(true)
     player.x = 400
     player.y = 200
@@ -35,8 +35,6 @@ function love.load()
 
     player.anim = player.animations.left 
 
-    background = love.graphics.newImage("sprites/background.png")
-
     walls = {}
     if gameMap.layers["Walls"] then
         for i, obj in pairs(gameMap.layers["Walls"].objects) do
@@ -45,11 +43,9 @@ function love.load()
             table.insert(walls, wall)
         end
     end
-
-    
 end
 
-function love.update(dt) 
+function love.update(dt)
     local isMoving = false
     local w = love.graphics.getWidth()
     local h = love.graphics.getHeight()
@@ -61,7 +57,7 @@ function love.update(dt)
     world:update(dt)
     player.x = player.collider:getX()
     player.y = player.collider:getY()
-    
+
     if love.keyboard.isDown("right") then
         vx = player.speed 
         player.anim = player.animations.right
@@ -98,7 +94,7 @@ function love.update(dt)
     if cam.x < w/2 then
         cam.x = w/2
     end
-    
+
     -- Stop camera top border
     if cam.y < h/2 then
         cam.y = h/2
@@ -121,5 +117,6 @@ function love.draw()
         gameMap:drawLayer(gameMap.layers["Trees"])
         player.anim:draw(player.spriteSheet, player.x, player.y, nil, 6, nil, 6, 9)
         world:draw( )
+        love.graphics.circle("fill", player.x, player.y, 2)
      cam:detach()
 end
