@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="25">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="34">
  <editorsettings>
-  <export format="lua"/>
+  <export target="level2.lua" format="lua"/>
  </editorsettings>
  <tileset firstgid="1" name="PlatformerTilesheet" tilewidth="16" tileheight="16" tilecount="64" columns="8">
   <image source="tilesets/PlatformerTilesheet.png" width="128" height="128"/>
@@ -21,31 +21,39 @@
 0,0,0,0,0,0,33,34,34,35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,33,34,46,42,42,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,49,50,50,50,50,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-33,35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-41,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-41,45,34,35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-41,42,42,45,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,35,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+33,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,35,
 41,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,43,
 41,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,43,
 41,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,43
 </data>
  </layer>
- <objectgroup id="4" name="Collisions">
+ <objectgroup id="4" name="Collisions" visible="0">
   <object id="2" x="0" y="256" width="480" height="64"/>
-  <object id="4" x="0" y="208" width="32" height="48"/>
-  <object id="5" x="32" y="240" width="32" height="16"/>
   <object id="6" x="96" y="160" width="64" height="48"/>
   <object id="7" x="64" y="176" width="32" height="32"/>
   <object id="8" x="192" y="128" width="64" height="32"/>
   <object id="10" x="288" y="96" width="16" height="16"/>
   <object id="12" x="144" y="80" width="48" height="16"/>
-  <object id="16" x="-16" y="0" width="16" height="208"/>
+  <object id="16" x="-16" y="0" width="16" height="256"/>
   <object id="18" x="480" y="0" width="16" height="256"/>
   <object id="22" x="304" y="80" width="48" height="48"/>
   <object id="23" x="288" y="112" width="16" height="16"/>
  </objectgroup>
- <objectgroup id="6" name="Loading Zones" opacity="0.93">
-  <object id="24" name="toLevel2" x="320" y="48" width="16" height="32">
+ <objectgroup id="8" name="Platform Collisions">
+  <object id="26" x="98" y="160" width="60"/>
+  <object id="27" x="66" y="176" width="30"/>
+  <object id="28" x="194" y="128" width="60"/>
+  <object id="29" x="146" y="80" width="44"/>
+  <object id="30" x="0" y="256" width="272"/>
+  <object id="31" x="272" y="256" width="208"/>
+  <object id="32" x="290" y="96" width="14"/>
+  <object id="33" x="306" y="80" width="44"/>
+ </objectgroup>
+ <objectgroup id="7" name="Loading Zones">
+  <object id="25" name="toLevel1" x="320" y="48" width="16" height="32">
    <properties>
     <property name="destX" type="int" value="0"/>
     <property name="destY" type="int" value="0"/>
